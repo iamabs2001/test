@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+	<title>Face tracker</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, user-scalable=no">
-	<title>Lvr</title>
-	<meta name="description" content="Virtual and Augmented reality for everyone">
 	<style>
 		body {
 			margin: 0;
@@ -13,9 +11,7 @@
 			min-height: 100vh;
 			overflow: hidden;
 			font-size: 16px;
-			color: #fff;
 			font-family: 'Roboto', 'Noto', sans-serif;
-			background-color: #000;
 			-webkit-tap-highlight-color: transparent;
 			-webkit-touch-callout: none;
 			-webkit-user-select: none;
@@ -26,6 +22,8 @@
 			position: absolute;
 			top: 0px;
 			left: 0px;
+			width: 100%;
+			height: 100%;
 			-o-transform: scaleX(-1);
 			-webkit-transform: scaleX(-1);
 			transform: scaleX(-1);
@@ -33,11 +31,11 @@
 			/*IE*/
 			filter: fliph;
 			/*IE*/
-			height: 100%;
-			width: 100%;
 		}
 
 		#videoel {
+			width: 100%;
+			height: 100%;
 			-o-transform: scaleX(-1);
 			-webkit-transform: scaleX(-1);
 			transform: scaleX(-1);
@@ -45,8 +43,14 @@
 			/*IE*/
 			filter: fliph;
 			/*IE*/
-			height: 100%;
-			width: 100%;
+		}
+
+		#container {
+			position: relative;
+		}
+
+		#content {
+			margin-top: 8px;
 		}
 
 		.nogum {
@@ -55,7 +59,7 @@
 
 		.btn {
 			font-family: 'Lato';
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 		.hide {
@@ -99,12 +103,10 @@
 	<script src="js/Stats.js"></script>
 	<div id="content">
 		<div id="container">
-			<video id="videoel" preload="auto" loop playsinline autoplay>
-				</video>
+			<video id="videoel" preload="auto" loop playsinline autoplay></video>
 			<canvas id="overlay"></canvas>
 		</div>
-		<br/>
-		<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
+		<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton">
 		<div id="text">
 			<div id="gum" class="gum">
 			</div>
